@@ -2,3 +2,22 @@ body {
     background-color: #222;
     color: #fff;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #3e0404;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #efffff;
+    text-decoration: none;
+    font-weight: bold;
+}
