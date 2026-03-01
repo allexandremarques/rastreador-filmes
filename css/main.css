@@ -51,3 +51,35 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+.btn-remover {
+    background-color: #e74c3c;
+}
+
+.btn-assistido {
+    background-color: #2ecc71;
+}
