@@ -8,7 +8,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #130c0c;
+    background-color: #1d1d1d;
 }
 
 nav {
@@ -44,12 +44,17 @@ input, select {
 }
 
 button {
-    background-color: #130c0c;
+    background-color: #1d1d1d;
     color: #efffff;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.categoria-card {
+    box-shadow: 4px 4px 5px 6px #1d1d1d;
+    border-radius: 5px;
 }
 
 ul {

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastreador | Filmes, Séries e Animes</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
     <header>
         <h1>Rastreador F S A</h1>
@@ -31,26 +33,52 @@
         </section>
         <section>
             <h2>Minha Lista</h2>
-            <ul>
-                <li>
-                    <span>Stargate - Série</span>
-                    <div class="acoes">
-                        <button class="btn-remover">Remover</button>
-                        <button class="btn-assistido">Assistido</button>
-                    </div>
-                </li>
-                <li>
-                    <span>Ready Player One - Filme</span>
-                    <div class="acoes">
-                        <button class="btn-remover">Remover</button>
-                        <button class="btn-assistido">Assistido</button>
-                    </div>
-                </li>
-            </ul>
+
+            <div class="categoria-card">
+                <h3>Filmes</h3>
+                <ul id="lista-filmes">
+                    <li>
+                        <span>Ready Player One - Filme</span>
+                        <div class="acoes">
+                            <button class="btn-remover">Remover</button>
+                            <button class="btn-assistido">Assistido</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="categoria-card">
+                <h3>Séries</h3>
+                <ul id="lista-series">
+                    <li>
+                        <span>Stargate - Série</span>
+                        <div class="acoes">
+                            <button class="btn-remover">Remover</button>
+                            <button class="btn-assistido">Assistido</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="categoria-card">
+                <h3>Animes</h3>
+                <ul id="lista-animes">
+                    <li>
+                        <span>Black Clover - Anime</span>
+                        <div class="acoes">
+                            <button class="btn-remover">Remover</button>
+                            <button class="btn-assistido">Assistido</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
 
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
+
 </html>
