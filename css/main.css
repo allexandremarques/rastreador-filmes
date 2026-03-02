@@ -88,3 +88,8 @@ button:hover {
 .btn-assistido {
     background-color: #2ecc71;
 }
+
+.item-assistido{
+    text-decoration: line-through;
+    color: #888;
+}

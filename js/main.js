@@ -10,7 +10,7 @@ formulario.addEventListener('submit', function (evento) {
     if (nomeTitulo == "") {
         alert("Por favor, digite um nome!")
         return
-        }
+    }
 
     const categoriaEscolhida = document.querySelector('#categoria').value
 
@@ -27,9 +27,22 @@ formulario.addEventListener('submit', function (evento) {
     const listaAlvo = document.querySelector('#lista-' + categoriaEscolhida)
 
     listaAlvo.innerHTML += novoItem
-    
-    // document.querySelector('#nome').value = "" (Jeito arcáico)
+
+    // document.querySelector('#nome').value = "" (Jeito arcaico)
     formulario.reset()
 
 });
 
+const areaDasListas = document.querySelector('#area-listas')
+areaDasListas.addEventListener('click', function (evento) {
+    if (evento.target.classList.contains('btn-remover')) {
+        const itemParaRemover = evento.target.closest('li')
+        itemParaRemover.remove()
+    }
+    if (evento.target.classList.contains('btn-assistido')) {
+        const itemAssistido = evento.target.closest('li')
+        const assistido = itemAssistido.querySelector('span')
+        assistido.classList.add('item-assistido')
+    } 
+
+})
