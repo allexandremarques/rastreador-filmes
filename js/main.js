@@ -1,3 +1,5 @@
+const meusTitulos = [];
+
 console.log("O motor do Rastreador está ligado!");
 
 const formulario = document.querySelector('#form-adicionar')
@@ -15,6 +17,9 @@ formulario.addEventListener('submit', function (evento) {
     const categoriaEscolhida = document.querySelector('#categoria').value
 
     console.log(nomeTitulo, categoriaEscolhida)
+
+    meusTitulos.push(nomeTitulo)
+    console.log(meusTitulos)
 
     const novoItem = `<li>
                         <span>${nomeTitulo} - ${categoriaEscolhida}</span>
