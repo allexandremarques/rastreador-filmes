@@ -19,6 +19,7 @@ formulario.addEventListener('submit', function (evento) {
     console.log(nomeTitulo, categoriaEscolhida)
 
     meusTitulos.push(nomeTitulo)
+    salvarDados()
     console.log(meusTitulos)
 
     const novoItem = `<li>
@@ -51,3 +52,8 @@ areaDasListas.addEventListener('click', function (evento) {
     } 
 
 })
+
+function salvarDados() {
+    const jsonString = JSON.stringify(meusTitulos)
+    localStorage.setItem('titulosSalvos', jsonString)
+}
