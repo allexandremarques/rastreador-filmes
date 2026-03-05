@@ -16,9 +16,15 @@ formulario.addEventListener('submit', function (evento) {
 
     const categoriaEscolhida = document.querySelector('#categoria').value
 
-    console.log(nomeTitulo, categoriaEscolhida)
+    // console.log(nomeTitulo, categoriaEscolhida)
 
-    meusTitulos.push(nomeTitulo)
+    const novoTituloObj = {
+        nome: nomeTitulo,
+        categoria: categoriaEscolhida,
+        assistido: false
+    }
+
+    meusTitulos.push(novoTituloObj)
     salvarDados()
     console.log(meusTitulos)
 
@@ -33,6 +39,8 @@ formulario.addEventListener('submit', function (evento) {
     const listaAlvo = document.querySelector('#lista-' + categoriaEscolhida)
 
     listaAlvo.innerHTML += novoItem
+
+
 
     // document.querySelector('#nome').value = "" (Jeito arcaico)
     formulario.reset()
@@ -49,7 +57,7 @@ areaDasListas.addEventListener('click', function (evento) {
         const itemAssistido = evento.target.closest('li')
         const assistido = itemAssistido.querySelector('span')
         assistido.classList.add('item-assistido')
-    } 
+    }
 
 })
 
