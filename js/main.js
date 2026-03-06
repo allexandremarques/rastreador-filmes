@@ -1,6 +1,9 @@
-const meusTitulos = [];
+let meusTitulos = [];
 
 console.log("O motor do Rastreador está ligado!");
+
+carregarDados()
+
 
 const formulario = document.querySelector('#form-adicionar')
 
@@ -16,7 +19,7 @@ formulario.addEventListener('submit', function (evento) {
 
     const categoriaEscolhida = document.querySelector('#categoria').value
 
-    // console.log(nomeTitulo, categoriaEscolhida)
+    console.log(nomeTitulo, categoriaEscolhida)
 
     const novoTituloObj = {
         nome: nomeTitulo,
@@ -64,4 +67,13 @@ areaDasListas.addEventListener('click', function (evento) {
 function salvarDados() {
     const jsonString = JSON.stringify(meusTitulos)
     localStorage.setItem('titulosSalvos', jsonString)
+}
+
+function carregarDados() {
+    const dadosEmTexto = localStorage.getItem('titulosSalvos')
+    if (dadosEmTexto) {
+        const dadosConvertidos = JSON.parse(dadosEmTexto)
+        console.log("Dados resgatados do cofre", dadosConvertidos)
+        meusTitulos = dadosConvertidos
+    }
 }
