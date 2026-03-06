@@ -54,14 +54,31 @@ const areaDasListas = document.querySelector('#area-listas')
 areaDasListas.addEventListener('click', function (evento) {
     if (evento.target.classList.contains('btn-remover')) {
         const itemParaRemover = evento.target.closest('li')
+        const textoDoSpan = itemParaRemover.querySelector('span').textContent
+        meusTitulos = meusTitulos.filter(function (titulo) {
+            const textoDesteTitulo = `${titulo.nome} - ${titulo.categoria}`
+            return textoDesteTitulo !== textoDoSpan
+        })
+        salvarDados()
         itemParaRemover.remove()
     }
     if (evento.target.classList.contains('btn-assistido')) {
         const itemAssistido = evento.target.closest('li')
         const assistido = itemAssistido.querySelector('span')
         assistido.classList.add('item-assistido')
-    }
 
+        textoDoSpan = assistido.textContent
+
+        const itemPescado = meusTitulos.find(function(titulo){
+            textoDesteTitulo = `${titulo.nome} - ${titulo.categoria}`
+            return textoDesteTitulo === textoDoSpan
+        })
+
+        itemPescado.assistido = true
+        
+        salvarDados()
+    }
+        
 })
 
 function salvarDados() {
@@ -77,8 +94,13 @@ function carregarDados() {
         meusTitulos = dadosConvertidos
 
         meusTitulos.forEach(function (titulo) {
+            let classeCSS = ""
+            if (titulo.assistido === true) {
+                classeCSS = "item-assistido"
+            }
+
             const novoItem = `<li>
-                        <span>${titulo.nome} - ${titulo.categoria}</span>
+                        <span class="${classeCSS}">${titulo.nome} - ${titulo.categoria}</span>
                         <div class="acoes">
                             <button class="btn-remover">Remover</button>
                             <button class="btn-assistido">Assistido</button>
