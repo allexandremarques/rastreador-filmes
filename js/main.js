@@ -75,5 +75,18 @@ function carregarDados() {
         const dadosConvertidos = JSON.parse(dadosEmTexto)
         console.log("Dados resgatados do cofre", dadosConvertidos)
         meusTitulos = dadosConvertidos
+
+        meusTitulos.forEach(function (titulo) {
+            const novoItem = `<li>
+                        <span>${titulo.nome} - ${titulo.categoria}</span>
+                        <div class="acoes">
+                            <button class="btn-remover">Remover</button>
+                            <button class="btn-assistido">Assistido</button>
+                        </div>
+                    </li>`
+
+            const listaAlvo = document.querySelector('#lista-' + titulo.categoria)
+            listaAlvo.innerHTML += novoItem
+        })
     }
 }
